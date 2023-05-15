@@ -13,9 +13,9 @@ public class MoneyTest {
         Dollar five =  new Dollar(5);
         //I create this object here so that assign the amount seperately, otherwise it's gonna be immutable
         Dollar product = five.times(2);
-        assertEquals(10, product.amount);
+        assertEquals(new Dollar(10), product);
         product = five.times(3);
-        assertEquals(15,product.amount);
+        assertEquals(new Dollar(15),product);
 
     }
 
