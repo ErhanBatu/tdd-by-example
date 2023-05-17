@@ -25,6 +25,7 @@ public class MoneyTest {
         //I create two different objects, that's why their objects not equal, it fails, I create a boolean in the class
         assertEquals(new Dollar(5), new Dollar(5));
         assertNotEquals(new Dollar(5), new Dollar(8));
+        assertNotEquals(new Dollar(5), new Franc(5));
 
     }
 
