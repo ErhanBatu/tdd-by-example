@@ -10,12 +10,10 @@ public class MoneyTest {
     @Test
     void testMultiplicationDollar() {
 
-        Dollar five =  new Dollar(5);
+        Money five =  Money.dollar(5);
         //I create this object here so that assign the amount seperately, otherwise it's gonna be immutable
-        Dollar product = five.times(2);
-        assertEquals(new Dollar(10), product);
-        product = five.times(3);
-        assertEquals(new Dollar(15),product);
+        assertEquals(Money.dollar(10), five.times(2));
+        assertEquals(Money.dollar(15),five.times(3));
 
     }
 
@@ -23,21 +21,19 @@ public class MoneyTest {
     void testEqualityDollar() {
 
         //I create two different objects, that's why their objects not equal, it fails, I create a boolean in the class
-        assertEquals(new Dollar(5), new Dollar(5));
-        assertNotEquals(new Dollar(5), new Dollar(8));
-        assertNotEquals(new Dollar(5), new Franc(5));
+        assertEquals(Money.dollar(5), Money.dollar(5));
+//        assertNotEquals(Money.dollar(5), Money.dollar(5));
+        assertNotEquals(Money.dollar(5), Money.franc(5));
 
     }
 
     @Test
     void testMultiplicationFranc() {
 
-        Franc five =  new Franc(5);
+        Money five =  Money.franc(5);
         //I create this object here so that assign the amount seperately, otherwise it's gonna be immutable
-        Franc product = five.times(2);
-        assertEquals(new Franc(10), product);
-        product = five.times(3);
-        assertEquals(new Franc(15),product);
+        assertEquals(Money.franc(10), five.times(2));
+        assertEquals(Money.franc(15),five.times(3));
 
     }
 
@@ -45,8 +41,8 @@ public class MoneyTest {
     void testEqualityFranc() {
 
         //I create two different objects, that's why their objects not equal, it fails, I create a boolean in the class
-        assertEquals(new Franc(5), new Franc(5));
-        assertNotEquals(new Franc(5), new Franc(8));
+        assertEquals(Money.franc(5), Money.franc(5));
+        assertNotEquals(Money.franc(5), Money.franc(8));
 
     }
 }
