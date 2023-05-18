@@ -1,6 +1,6 @@
 package guru.springframework;
 
-public class Money {
+public class Money implements Expression {
 
     //This is my Base class including common properties in Franc and Dollar classes
 
@@ -44,4 +44,10 @@ public class Money {
 
         return new Money(amount*multiplier, this.currency);
     }
+
+    public Expression plus(Money added){
+        return new Money(amount + added.amount, currency);
+    }
+
+
 }
